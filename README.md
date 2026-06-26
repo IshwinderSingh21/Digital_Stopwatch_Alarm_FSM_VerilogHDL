@@ -36,9 +36,9 @@ The testbench dynamically applies stimulus to verify boundary conditions, input 
 1. **Initial System Reset (`initial_reset.png`)**: Validates that asserting `rst` forces registers to zero, sets `seg` to `40` (character `0`), and sets `anode` to `3F` (all displays blanked).
 2. **Test Case 1: Mode Switching Logic (`testcase1.png`)**: Verifies the walking-zero anode pattern (`3E -> 3D -> 3B...`) and dynamic routing when shifting states via `btn_mode`.
 3. **Test Case 2: Control Input Processing (`testcase2.png`)**: Verifies that `btn_control` accurately triggers stopwatch run, lap freeze, and clear functions.
-4. **Test Case 3: Timekeeping Cascade (`testcase3.png`)**: Validates clock counter tracking (Seconds $\rightarrow$ Minutes $\rightarrow$ Hours ripple).
+4. **Test Case 3: Timekeeping Cascade (`testcase3.png`)**: Validates clock counter tracking (Seconds -> Minutes -> Hours ripple).
 5. **Test Case 4: Stopwatch Resolution (`testcase4.png`)**: Validates high-resolution sub-second tracking accuracy.
 6. **Test Case 5: Character Decoding (`testcase5.png`)**: Verifies 5-bit lookup tables for custom status text strings without distortion.
 7. **Test Case 6: Mid-Cycle Reset Recovery (`testcase6.png`)**: Validates instant return to ground-state conditions during active counting.
 8. **Test Case 7: Button Input Debounce Delay (`testcase7.png`)**: Proves asynchronous button edges are safely registered and delayed across clock boundaries.
-9. **Test Case 8: 24-Hour Wrap-Around (`testcase8.png`)**: Assures full boundary wrap-around execution ($23:59:59 \rightarrow 00:00:00$).
+9. **Test Case 8: 24-Hour Wrap-Around (`testcase8.png`)**: Assures full boundary wrap-around execution (23:59:59 -> 00:00:00).
