@@ -1,31 +1,20 @@
 # Digital_Stopwatch_Alarm_FSM_VerilogHDL
 
-A modular Verilog HDL implementation and behavioral simulation of a multi-function digital clock system. Controlled by a central Finite State Machine (FSM), the architecture features concurrent background timekeeping, independent stopwatch operations (start/freeze), and custom 5-bit alphanumeric display formatting over an active-low multiplexed 6-digit 7-segment display interface. Validated dynamically via an 8-stage verification testbench using Icarus Verilog and GTKWave.
+## 🚀 Project Overview
+This repository contains a modular Verilog HDL implementation and behavioral simulation of a multi-function digital clock system. Controlled by a centralized Finite State Machine (FSM), the architecture supports concurrent background timekeeping, independent high-resolution stopwatch operations (start, lap freeze, and clear), and custom 5-bit alphanumeric display formatting. 
+
+The entire system interfaces with an **active-low multiplexed 6-digit 7-segment display**. To ensure high reliability and glitch-free simulation, the hardware logic isolates timing registers, utilizes a 1 kHz display refresh scanner, and integrates input conditioning (synchronization and debouncing) for external tactile buttons. 
+
+The complete design has been exhaustively validated across an 8-stage verification matrix using Icarus Verilog (`iverilog`) and visualized via GTKWave with zero uninitialized (`xx`) state errors.
 
 ---
 
 ## 📁 Repository Structure
 
-```text
-├── images/
-│   ├── initial_reset.png
-│   ├── testcase1.png
-│   ├── testcase2.png
-│   ├── testcase3.png
-│   ├── testcase4.png
-│   ├── testcase5.png
-│   ├── testcase6.png
-│   ├── testcase7.png
-│   └── testcase8.png
-└── src/
-    ├── clock_divider.v
-    ├── control_states_fsm.v
-    ├── debouncer.v
-    ├── seven_seg_mux.v
-    ├── synchronizer.v
-    ├── time_counters.v
-    ├── top_watch.v
-    └── top_watch_tb.v
+* **`src/`**: Houses all 8 modular Verilog source files (`top_watch.v`, `control_states_fsm.v`, `time_counters.v`, `seven_seg_mux.v`, `clock_divider.v`, `debouncer.v`, `synchronizer.v`, and `top_watch_tb.v`).
+* **`images/`**: Contains the complete behavioral verification waveforms captured from GTKWave (`initial_reset.png`, and `testcase1.png` through `testcase8.png`).
+
+---
 
 ## 🔄 Display Interface & Anode Mapping
 The display driver employs high-speed dynamic multiplexing, sequentially pulling exactly one common anode line low (`0`) at a frequency of 1 kHz while routing the matching data nibble or custom alphanumeric token to the active-low segment bus (`seg[6:0]`).
