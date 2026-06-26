@@ -31,14 +31,14 @@ The display driver employs high-speed dynamic multiplexing, sequentially pulling
 ---
 
 ## 📊 8-Stage Verification Matrix
-The testbench dynamically applies stimulus to verify boundary conditions, input synchronization, and state transitions:
+The testbench dynamically applies stimulus to transition through your exact functional execution phases:
 
-1. **Initial System Reset (`initial_reset.png`)**: Validates that asserting `rst` forces registers to zero, sets `seg` to `40` (character `0`), and sets `anode` to `3F` (all displays blanked).
-2. **Test Case 1: Mode Switching Logic (`testcase1.png`)**: Verifies the walking-zero anode pattern (`3E -> 3D -> 3B...`) and dynamic routing when shifting states via `btn_mode`.
-3. **Test Case 2: Control Input Processing (`testcase2.png`)**: Verifies that `btn_control` accurately triggers stopwatch run, lap freeze, and clear functions.
-4. **Test Case 3: Timekeeping Cascade (`testcase3.png`)**: Validates clock counter tracking (Seconds -> Minutes -> Hours ripple).
-5. **Test Case 4: Stopwatch Resolution (`testcase4.png`)**: Validates high-resolution sub-second tracking accuracy.
-6. **Test Case 5: Character Decoding (`testcase5.png`)**: Verifies 5-bit lookup tables for custom status text strings without distortion.
-7. **Test Case 6: Mid-Cycle Reset Recovery (`testcase6.png`)**: Validates instant return to ground-state conditions during active counting.
-8. **Test Case 7: Button Input Debounce Delay (`testcase7.png`)**: Proves asynchronous button edges are safely registered and delayed across clock boundaries.
-9. **Test Case 8: 24-Hour Wrap-Around (`testcase8.png`)**: Assures full boundary wrap-around execution (23:59:59 -> 00:00:00).
+1. **Initial Reset (`initial_reset.png`)**: Validates that asserting `rst` forces registers to zero, sets `seg` to `40` (character `0`), and sets `anode` to `3F` (all displays safely blanked out at startup).
+2. **Test Case 1: Stopwatch Mode Activation (`testcase1.png`)**: Asserts the mode selector to transition the central FSM into the stopwatch state, ensuring the system isolates standard clock registers.
+3. **Test Case 2: Stopwatch Counting & Operation (`testcase2.png`)**: Drives the control line to start high-resolution interval counting, verifying stopwatch registers increment accurately.
+4. **Test Case 3: Stopwatch Pause / Lap Freeze (`testcase3.png`)**: Asserts control inputs to freeze the display lines (holding the lap value visible) while the timing engine runs silently in the background.
+5. **Test Case 4: Stopwatch Reset (`testcase4.png`)**: Issues a clear sequence to wipe the stopwatch memory tracks and return the tracking registers back to a clean zero base.
+6. **Test Case 5: Alarm Configuration State (`testcase5.png`)**: Transitions the system into the dedicated Alarm mode, validating that the 5-bit character matrix maps custom menu text parameters onto the display layout.
+7. **Test Case 6: Time Adjustment Setup (`testcase6.png`)**: Drives the configuration FSM into the active Time Set state, enabling direct adjustment modifications to the hours and minutes data channels.
+8. **Test Case 7: Normal Timekeeping Cascades (`testcase7.png`)**: Monitors the active ripple sequence where seconds rolling over cleanly increments minutes, and minutes ripple into hours under standard run mode.
+9. **Test Case 8: Boundary Wrap-Around Execution (`testcase8.png`)**: Validates the ultimate edge condition, ensuring the system loops safely from `23:59:59` back to `00:00:00` on the next active time-pulse.
