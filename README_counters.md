@@ -1,4 +1,4 @@
-# ⏱️ Timekeeping Counter Infrastructure (`time_counters.v`)
+#  Timekeeping Counter Infrastructure (`time_counters.v`)
 
 ## Description
 The arithmetic computing engine of the clock. It manages independent, synchronously incremented register banks to track standard timekeeping and stopwatch intervals cleanly.
