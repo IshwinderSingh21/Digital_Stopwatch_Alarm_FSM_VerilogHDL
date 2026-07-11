@@ -1,4 +1,4 @@
-# ⏱️ Clock Management Network (`clock_divider.v`)
+#  Clock Management Network (`clock_divider.v`)
 
 ## Description
 The frequency management core of the system. It down-samples the high-frequency system oscillator clock into precise, usable timing pulses via sequential binary toggle counters.
