@@ -1,4 +1,4 @@
-# 🎛️ Top-Level Wrapper Architecture (`top_watch.v`)
+#  Top-Level Wrapper Architecture (`top_watch.v`)
 
 ## Description
 The `top_watch` module serves as the primary structural routing backplane of the entire digital clock system. It structurally instantiates and bridges the clock management network, input conditioning filters, central control FSM, and timing counters into a single synchronized system matrix.
