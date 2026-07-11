@@ -1,4 +1,4 @@
-# 🔄 Display Driver & Logic Decoder (`seven_seg_mux.v`)
+#  Display Driver & Logic Decoder (`seven_seg_mux.v`)
 
 ## Description
 A hardwired combinational and sequential driver optimized to multiplex multi-bit time registers across a shared active-low 6-digit 7-segment bus interface.
