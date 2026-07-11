@@ -1,4 +1,4 @@
-# 🔬 Verification Testbench Architecture (`top_watch_tb.v`)
+#  Verification Testbench Architecture (`top_watch_tb.v`)
 
 ## Description
 A comprehensive behavioral simulation wrapper designed to dynamically assert inputs, handle time compression, and comprehensively test boundary edge cases.
