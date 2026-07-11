@@ -1,6 +1,6 @@
 # Digital_Stopwatch_Alarm_FSM_VerilogHDL
 
-## 🚀 Project Overview
+##  Project Overview
 This repository contains a modular Verilog HDL implementation and behavioral simulation of a multi-function digital clock system. Controlled by a centralized Finite State Machine (FSM), the architecture supports concurrent background timekeeping, independent high-resolution stopwatch operations (start, lap freeze, and clear), and custom 5-bit alphanumeric display formatting. 
 
 The entire system interfaces with an **active-low multiplexed 6-digit 7-segment display**. To ensure high reliability and glitch-free simulation, the hardware logic isolates timing registers, utilizes a 1 kHz display refresh scanner, and integrates input conditioning (synchronization and debouncing) for external tactile buttons. 
@@ -9,14 +9,14 @@ The complete design has been exhaustively validated across an 8-stage verificati
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 * **`src/`**: Houses all 8 modular Verilog source files (`top_watch.v`, `control_states_fsm.v`, `time_counters.v`, `seven_seg_mux.v`, `clock_divider.v`, `debouncer.v`, `synchronizer.v`, and `top_watch_tb.v`).
 * **`images/`**: Contains the complete behavioral verification waveforms captured from GTKWave (`initial_reset.png`, and `testcase1.png` through `testcase8.png`).
 
 ---
 
-## 🔄 Display Interface & Anode Mapping
+##  Display Interface & Anode Mapping
 The display driver employs high-speed dynamic multiplexing, sequentially pulling exactly one common anode line low (`0`) at a frequency of 1 kHz while routing the matching data nibble or custom alphanumeric token to the active-low segment bus (`seg[6:0]`).
 
 | Digit Index | Anode Active Bit (`anode[5:0]`) | Timekeeping Mapping | Menu Text Mapping |
@@ -30,7 +30,7 @@ The display driver employs high-speed dynamic multiplexing, sequentially pulling
 
 ---
 
-## 📊 8-Stage Verification Matrix
+##  8-Stage Verification Matrix
 The testbench dynamically applies stimulus to transition through your exact functional execution phases:
 
 1. **Initial Reset (`initial_reset.png`)**: Validates that asserting `rst` forces registers to zero, sets `seg` to `40` (character `0`), and sets `anode` to `3F` (all displays safely blanked out at startup).
