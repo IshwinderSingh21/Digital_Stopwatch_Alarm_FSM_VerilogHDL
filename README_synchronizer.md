@@ -1,4 +1,4 @@
-# 🔄 Input Synchronizer Module (`synchronizer.v`)
+#  Input Synchronizer Module (`synchronizer.v`)
 
 ## Description
 The `synchronizer` module is a critical metastability protection barrier. It realigns external, asynchronous button presses safely to the active rising edges of the internal system clock before passing the signals into the debouncer tracking filters.
