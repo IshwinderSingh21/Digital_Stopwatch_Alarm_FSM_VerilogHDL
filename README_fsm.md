@@ -1,4 +1,4 @@
-# 🧠 Central Finite State Machine (`control_states_fsm.v`)
+#  Central Finite State Machine (`control_states_fsm.v`)
 
 ## Description
 This module acts as the central execution controller for the system. It tracks the current operational state and outputs 5-bit alphanumeric token arrays to determine what information is sent to the display matrix.
