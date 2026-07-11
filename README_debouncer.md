@@ -1,4 +1,4 @@
-# 🛡️ Input Conditioning Pipeline (`debouncer.v` & `synchronizer.v`)
+#  Input Conditioning Pipeline (`debouncer.v` & `synchronizer.v`)
 
 ## Description
 Protects the FSM state routing networks from input glitches, signal degradation, and clock domain violations during hardware operation.
